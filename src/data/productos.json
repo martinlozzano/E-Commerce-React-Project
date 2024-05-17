@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "nombre": "Cabernet Sauvignon",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 25.99,
+      "descripcion": "Un vino tinto robusto con sabores a frutas oscuras y notas de roble."
+    },
+    {
+      "id": 2,
+      "nombre": "Merlot",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 19.99,
+      "descripcion": "Un vino tinto suave con notas de ciruela y un toque de vainilla."
+    },
+    {
+      "id": 3,
+      "nombre": "Pinot Noir",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 29.99,
+      "descripcion": "Un vino tinto elegante con sabores a frutos rojos y un acabado sedoso."
+    },
+    {
+      "id": 4,
+      "nombre": "Chardonnay",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 22.99,
+      "descripcion": "Un vino blanco con cuerpo, con sabores a manzana y un toque de roble."
+    },
+    {
+      "id": 5,
+      "nombre": "Sauvignon Blanc",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 18.99,
+      "descripcion": "Un vino blanco refrescante con notas cítricas y un toque de hierbas."
+    },
+    {
+      "id": 6,
+      "nombre": "Syrah",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 27.99,
+      "descripcion": "Un vino tinto rico en cuerpo con sabores a mora y un toque de especias."
+    },
+    {
+      "id": 7,
+      "nombre": "Zinfandel",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 24.99,
+      "descripcion": "Un vino tinto afrutado con notas de frambuesa y un toque de pimienta negra."
+    },
+    {
+      "id": 8,
+      "nombre": "Malbec",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 21.99,
+      "descripcion": "Un vino tinto con cuerpo, con sabores a ciruela y un acabado suave."
+    },
+    {
+      "id": 9,
+      "nombre": "Riesling",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 20.99,
+      "descripcion": "Un vino blanco dulce con notas de miel y melocotón."
+    },
+    {
+      "id": 10,
+      "nombre": "Rosé",
+      "imagen": "https://placeholder.pics/svg/150",
+      "precio": 17.99,
+      "descripcion": "Un vino rosado fresco y afrutado con sabores a fresa y un toque de cítricos."
+    }
+]
+
+  
