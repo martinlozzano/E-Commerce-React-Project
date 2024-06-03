@@ -1,0 +1,32 @@
+.contador{
+    border: 1px solid $-clr-secondary;
+    border-radius: .8rem;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .boton-restar, .boton-sumar{
+        width: 30px;
+        height: 30px;
+        border-radius: .5rem;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: $-clr-secondary;
+        transition: all .3s;
+
+        &:hover{
+            background-color: $-clr-morado;
+            color: $-clr-secondary;
+            box-shadow: 0px 0px 5px $-clr-secondary;
+        }
+    }
+
+    .counter{
+        font-size: 20px;
+        width: 30px;
+        text-align: center;
+    }
+}

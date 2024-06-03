@@ -1,26 +1,63 @@
 import { useState } from 'react'
 import React, { useEffect } from 'react'
-import data from '../data/productos.json'
 import { ItemList } from './ItemList'
+import { Filter } from './Filter'
+import { useParams } from 'react-router-dom'
+import categorias from '../data/categorias.json'
 
 export function ItemListContainer() {
 
-  let [productos, setProductos] = useState([])
+  let { categoryId } = useParams()
+  let [productos, setProductos] = useState()
+  let [tipoParametro, setTipoParametro] = useState();
 
-  function pedirProductos () {
-    return new Promise ((resolve, reject) => {
-      resolve(data)
-    })
+  let verificarId = () => {
+    for (let i of categorias.bodega) {
+      if(i.id === categoryId) {
+        setTipoParametro("bodega")
+      }
+    }
+    for (let i of categorias.blancos) {
+      if(i.id === categoryId) {
+        setTipoParametro("tipo")
+      }
+    }
+    for (let i of categorias.tintos) {
+      if(i.id === categoryId) {
+        setTipoParametro("tipo")
+      }
+    }
   }
 
   useEffect(() =>{
-    pedirProductos ()
-      .then ((res) => (setProductos(res)))
-  })
+    verificarId()
+
+      setTimeout(() => {
+
+        fetch("../src/data/productos.json")
+          .then(res => res.json())
+          .then(data => {
+            if (!categoryId) {
+              setProductos(data)
+              
+            } else{
+              if(tipoParametro === "bodega") {
+                setProductos(data.filter((prod) => prod.bodegaId === categoryId))
+                
+
+              } else if(tipoParametro === "tipo"){
+                setProductos(data.filter((prod) => prod.tipoId === categoryId))
+              }
+            }
+            
+          })
+
+      }, 2000);
+  }, [categoryId, tipoParametro])
 
   return (
-    <div className='item-container'>
+    <>
       <ItemList productos={productos}/>
-    </div>
+    </>
   )
 }

@@ -1,0 +1,29 @@
+Vinos:
+    Tintos:
+        -Bodega Bianchi
+            [✅] - Cabernet Sauvignon 
+            [✅] - Malbec 
+            [✅] - Merlot 
+        -Bodega Las Perdices
+            [✅] - Cabernet Sauvignon 
+            [✅] - Malbec 
+            [✅] - Pinot Noir 
+        -Bodega Trumpeter
+            [✅] - Cabernet Sauvignon 
+            [✅] - Malbec 
+            [✅] - Merlot 
+            [✅] - Pinot Noir 
+    Blancos:
+        -Bodega Santa Julia
+            [✅] -  Dulce
+            [❌] -  Torrontes
+            [✅] -  Chardonnay
+            [❌] -  Sauvignon blanc
+        -Bodega Benjamin
+            [❌] -  Dulce
+            [✅] -  Torrontes
+            [✅] -  Chardonnay
+            [✅] -  Sauvignon blanc
+        -Bodega Septima
+            [✅] -  Chardonnay
+            [✅] -  Sauvignon blanc

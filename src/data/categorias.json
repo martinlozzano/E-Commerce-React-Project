@@ -1,0 +1,64 @@
+{
+    "bodega": [
+        {
+            "nombre": "Bianchi",
+            "id": "bianchi"
+            },
+            {
+            "nombre": "Trumpeter",
+            "id": "trumpeter"
+            },
+            {
+            "nombre": "Las Perdices",
+            "id": "las-perdices"
+            },
+            {
+            "nombre": "Benjamín",
+            "id": "benjamin"
+            },
+            {
+            "nombre": "Séptima",
+            "id": "septima"
+            },
+            {
+            "nombre": "Santa Julia",
+            "id": "santa-julia"
+            }
+    ],
+    "tintos": [
+        {
+            "nombre": "Cabernet Sauvignon",
+            "id": "cabernet-sauvignon"
+            },
+            {
+            "nombre": "Merlot",
+            "id": "merlot"
+            },
+            {
+            "nombre": "Pinot Noir",
+            "id": "pinot-noir"
+            },
+            {
+            "nombre": "Malbec",
+            "id": "malbec"
+            }
+    ],
+    "blancos": [
+        {
+            "nombre": "Chardonnay",
+            "id": "chardonnay"
+            },
+            {
+            "nombre": "Sauvignon Blanc",
+            "id": "sauvignon-blanc"
+            },
+            {
+            "nombre": "Dulce",
+            "id": "dulce"
+            },
+            {
+            "nombre": "Torrontes",
+            "id": "torrontes"
+            }
+    ]
+}

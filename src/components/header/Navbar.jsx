@@ -1,25 +1,26 @@
 import React from "react"
+import { NavLink } from "react-router-dom"
 
 export function Navbar() {
   return (
     <div className="navbar-container">
         <nav className="navbar" id="navbar">
-          <a className="menu-link active" href="#0">
+          <NavLink className="menu-link" activeClassName="active" to="/">
             <span>inicio</span>
             <div className="background"/>
-          </a>
-          <a className="menu-link" href="#0">
+          </NavLink>
+          <NavLink className="menu-link" activeClassName="active" to="productos">
             <span>productos</span>
             <div className="background"/>
-          </a>
-          <a className="menu-link" href="#0">
+          </NavLink>
+          <NavLink className="menu-link" activeClassName="active" to="servicios">
             <span>Servicios</span>
             <div className="background"/>
-          </a>
-          <a className="menu-link" href="#0">
+          </NavLink>
+          <NavLink className="menu-link" activeClassName="active" to="contactanos">
             <span>contactanos</span>
             <div className="background"/>
-          </a>
+          </NavLink>
         </nav>
     </div>
   )

@@ -1,12 +1,14 @@
 .item-container {
     display: grid;
     grid-template-columns: repeat(3, 400px);
+    grid-template-rows: 2fr 2fr;
     justify-content: center;
     align-items: center;
     margin-top: 80px;
     min-height: 100vh;
     gap: 1rem;
     padding-inline: 100px;
+    margin-left: 350px;
 
     @media (max-width: 992px) {
         grid-template-columns: 1fr 1fr;
