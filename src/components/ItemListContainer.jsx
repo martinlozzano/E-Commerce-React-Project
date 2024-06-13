@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
 import { useParams } from 'react-router-dom'
 import categorias from '../data/categorias.json'
-import { CartWidget } from './CartWidget'
+import dataProductos from '../data/productos.json'
 
 export function ItemListContainer() {
 
@@ -32,8 +32,7 @@ export function ItemListContainer() {
     verificarId()
 
       setTimeout(() => {
-
-        fetch("../src/data/productos.json")
+        fetch("../data/productos.json")
           .then(res => res.json())
           .then(data => {
             if (!categoryId) {
