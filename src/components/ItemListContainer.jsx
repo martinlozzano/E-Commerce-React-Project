@@ -28,7 +28,36 @@ export function ItemListContainer() {
     }
   }
 
-  useEffect(() =>{
+  const pedirProductos = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(dataProductos);
+      }, 1000);
+    })
+  }
+
+  useEffect(() => {
+    verificarId()
+    pedirProductos()
+    .then(res => {
+      if (!categoryId) {
+        setProductos(res)
+        
+      } else{
+        if(tipoParametro === "bodega") {
+          setProductos(res.filter((prod) => prod.bodegaId === categoryId))
+          
+
+        } else if(tipoParametro === "tipo"){
+          setProductos(res.filter((prod) => prod.tipoId === categoryId))
+        }
+      }
+      
+    })
+      
+  }, [categoryId, tipoParametro]);
+
+  /* useEffect(() =>{
     verificarId()
 
       setTimeout(() => {
@@ -51,7 +80,7 @@ export function ItemListContainer() {
           })
 
       }, 2000);
-  }, [categoryId, tipoParametro])
+  }, [categoryId, tipoParametro]) */
 
   return (
     <>
