@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: space-between;
     margin: 15px 40px 20px 40px;
+    bottom: 0;
+    left: 0;
     
     hr {
         width: 100%;
@@ -40,5 +42,10 @@
                 }
             }
         }
+    }
+
+    @media(max-width: 576px){
+        margin-top: 0;
+        margin-inline: 25px;
     }
 }

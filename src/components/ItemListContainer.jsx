@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
-import { Filter } from './Filter'
 import { useParams } from 'react-router-dom'
 import categorias from '../data/categorias.json'
+import { CartWidget } from './CartWidget'
 
 export function ItemListContainer() {
 

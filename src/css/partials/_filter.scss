@@ -14,51 +14,221 @@
     border: 4px solid $-clr-secondary;
     box-shadow: 0px 0px 5px $-clr-secondary;
 
-    div{
-        &:nth-last-of-type(n+2){
-            border-bottom: 1px solid $-clr-primary;
-        }
-
-        h5{
-            font-size: 18px;
-            text-decoration: underline 1px;
-            color: $-clr-dorado;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .link-container{
-            border: none;
-            display: flex;
-            margin-block: 15px;
-            width: 100px;
-            .link{
-                margin-left: 10px;
-                color: $-clr-primary;
-                text-decoration: none;
-                width: 280px;
-                p{
-                    width: 280px;
-                    transition: all .3s;
-                }
+    .contenedor-categorias{
+        div{
+            &:nth-last-of-type(n+2){
+                border-bottom: 1px solid $-clr-primary;
             }
+    
+            h5{
+                font-size: 18px;
+                text-decoration: underline 1px;
+                color: $-clr-dorado;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            .link-container{
+                border: none;
+                display: flex;
+                margin-block: 15px;
+                width: 100px;
+                .link{
+                    margin-left: 10px;
+                    color: $-clr-primary;
+                    text-decoration: none;
+                    width: 280px;
 
-            .active{
-                p{
-                    font-size: 20px;
-                    font-weight: bold;
-                    border-radius: 2rem 0rem 0rem 2rem;
-                    background-color: $-clr-primary;
-                    color: $-clr-secondary;
-                    padding-left: 10px;
-                    padding-block: 5px;
-                    width: 300px;
-                    
+                    &:hover{
+                        font-size: 20px;
+                        text-decoration: underline 1px;
+                    }
+
+                    p{
+                        width: 280px;
+                        transition: all .3s;
+                    }
+                }
+    
+                .active{
+                    p{
+                        font-size: 20px;
+                        font-weight: bold;
+                        border-radius: 2rem 0rem 0rem 2rem;
+                        background-color: $-clr-primary;
+                        color: $-clr-secondary;
+                        padding-left: 10px;
+                        padding-block: 5px;
+                        width: 300px;
+                        
+                    }
                 }
             }
         }
     }
 
     .bodegas, .tintos, .blancos{
-        padding-bottom: 15px;
+        padding-bottom: 5px;
+        padding-top: 15px   ;
+    }
+
+    .categorias-desplegable{
+        display: none;
+    }
+
+    @media (max-width: 1700px) {
+        position: relative;
+        left: 0px;
+        top: 50px;
+        margin: auto;
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        min-height: 50px;
+        width: 700px;
+
+        .categorias-desplegable{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 4px solid $-clr-secondary;
+            box-shadow: 0px 0px 5px $-clr-secondary;
+            border-radius: 1rem;
+            width: 700px;
+            height: 50px;
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            padding-inline: 10px;
+            background-color: $-clr-secondary;
+            z-index: 99;
+
+            h4{
+                font-size: 35px;
+                color: $-clr-primary;
+            }
+
+            .icono-flecha{
+                display: flex;
+                svg{
+                    width: 60px;
+                    height: 50px;
+                    path{
+                        color: $-clr-primary;
+                    }
+                }
+            }
+        }
+
+        .contenedor-categorias{
+            height: 0;
+            overflow-y: hidden;
+            transition: all .5s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            div{
+                width: 350px;
+            }
+        }
+
+        .open{
+            margin-top: 40px;
+            height: 820px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            div{
+                padding-bottom: 0;
+                h5{
+                    font-size: 28px;
+                }
+                .link-container{
+                    padding-block: 5px;
+                    margin-block: 10px;
+                    width: 100%;
+                    .link{
+                        margin-inline: 0;
+                        width: 100%;
+
+                        p{
+                            font-size: 22px;
+                            width: 100%;
+                        }
+                    }
+
+                    .active{
+                        p{
+                            font-size: 23px;
+                            font-weight: bold;
+                            border-radius: 2rem;
+                            background-color: $-clr-primary;
+                            color: $-clr-secondary;
+                            padding-left: 0px;
+                            width: 100%;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        width: 520px;
+
+        .categorias-desplegable{
+            width: 520px;
+
+            h4{
+                font-size: 30px;
+            }
+
+            .icono-flecha{
+                svg{
+                    width: 50px;
+                    height: 40px;
+                }
+            }
+        }
+
+        .open{
+            height: 700px;
+            div{
+                h5{
+                    font-size: 22px;
+                }
+                .link-container{
+                    .link{
+                        p{
+                            font-size: 17px;
+                        }
+                    }
+
+                    .active{
+                        p{
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 576px){
+        width: 320px;
+        .categorias-desplegable{
+            width: 320px;
+        }
+
+        .contenedor-categorias{
+            div{
+                width: 250px;
+            }
+        }
     }
 }

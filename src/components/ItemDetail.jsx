@@ -1,7 +1,18 @@
-import React from 'react'
-import { Counter } from './Counter'
+import React, { useContext, useState } from 'react'
+import { CartContext } from './context/CartContext'
 
 export const ItemDetail = ( {item} ) => {
+
+  const { agregarCarrito } = useContext(CartContext) 
+
+  let [cantidad, setCantidad] = useState(1)
+
+  const handleSumar = () => {
+      setCantidad((prev) => prev + 1)
+  }
+  const handleRestar = () => {
+      contador > 1 && setCantidad((prev) => prev - 1)
+  }
 
   return (
     <div className='item-detail-container'>
@@ -34,8 +45,12 @@ export const ItemDetail = ( {item} ) => {
             </div>
         </div>
         <div className="agregar-carrito">
-          <button className='boton-agregar'>AGREGAR AL CARRITO</button>
-          <Counter/>
+          <button onClick={() => agregarCarrito(item, cantidad)} className='boton-agregar'>AGREGAR AL CARRITO</button>
+          <div className='contador'>
+            <button onClick={handleRestar} className='boton-restar'>-</button>
+            <span className='counter'>{cantidad}</span>
+            <button onClick={handleSumar} className='boton-sumar'>+</button>
+          </div>
         </div>
         <div className="descripcion">
           <p className='texto-descriptivo'>{item.descripcion}</p>

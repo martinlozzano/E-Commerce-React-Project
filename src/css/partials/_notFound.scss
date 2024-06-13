@@ -1,0 +1,83 @@
+.not-found-container{
+    height: 76vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    gap: 1rem;
+    z-index: 100000;
+    background-color: $-clr-primary;
+    padding-top: 300px;
+
+    h1{
+        font-weight: bold;
+        color: $-clr-secondary;
+        font-size: 40px;
+    }
+
+    a{
+        text-decoration: none;
+        
+        .boton-volver{
+            border: 2px solid $-clr-secondary;
+            border-radius: 6px;
+            width: 150px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .texto{
+                color: $-clr-secondary;
+                padding-inline: 8px;
+                font-size: 22.5px;
+                transition: all .5s;
+                letter-spacing: .7px;
+            }
+
+            &::before, &::after {
+                content: '';
+                background: $-clr-secondary;
+                width: 12.5px;
+                height: 18.5px;
+                transition: all .5s;
+            }
+
+            &::before{
+                clip-path: polygon(
+                        100%       0%,
+                        0%       50%,
+                        100%     100%,
+                        100%     90%,
+                        20%     50%,
+                        100%     10%
+                );
+            }
+
+            &::after{
+                clip-path: polygon(
+                        0%       0%,
+                        0%       10%,
+                        80%     50%,
+                        0%     90%,
+                        0%     100%,
+                        100%     50%
+                );
+            }
+
+            &:hover{
+                border-color: $-clr-morado;
+                filter: drop-shadow(0px 0px 2px $-clr-secondary);
+                .texto{
+                    padding-inline: 12px;
+                    transform: scale(1.05);
+                }
+                &::after, &::before{
+                    background: $-clr-morado;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,312 @@
+.contenedor-carrito{
+    padding-inline: 150px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh ;
+
+    .header-carrito{
+        width: 70%;
+        height: 50px;
+        border-radius:1rem;
+        background: $-clr-secondary;
+        color: $-clr-primary;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 0px 5px $-clr-secondary;
+        h1{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+
+    .contenedor-productos{
+        margin-top: 10px;
+        display: felx;
+        flex-direction: column;
+        border-radius: 1rem;
+        border: 1px solid $-clr-secondary;
+        width: 100%;
+        height: min-content;
+        overflow: hidden;
+
+        .header-productos{
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
+            padding-block: 10px;
+            padding-inline: 30px;
+            border-bottom: 1px solid;
+            background: $-clr-secondary;
+            
+            p{
+                font-weight: bold;
+                font-size: 20px;
+                color: $-clr-primary;
+            }
+        }
+        .producto{
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
+            justify-content: space-between;
+            align-items: center;
+            padding-block: 10px;
+            margin-inline: 30px;
+            padding-inline: 10px;
+            border-bottom: 1px solid $-clr-secondary;
+            height: 50px;
+
+            a{
+                width:fit-content;
+                text-decoration: none;
+                h3{
+                    color: $-clr-secondary;
+                }
+            }
+
+            .precio{
+                padding-left: 7px;
+            }
+
+            .contenedor-cantidad{
+                padding-left: 12px;
+            }
+
+            .subtotal{
+                padding-left: 25px;
+            }
+
+            .contenedor-cantidad{
+                display: flex;
+                align-items: center;
+                height: 80%;
+                button{
+                    transition: all .3s;
+                    width: 20px;
+                    border: none;
+                    background-color: $-clr-secondary;
+                    border-radius: 5px;
+                    height: 100%;
+                    cursor: pointer;
+
+                    &:hover{
+                        box-shadow: 0px 0px 5px $-clr-secondary;
+                        transform: scale(1.1);
+                        background: $-clr-morado;
+                    }
+                }
+                .contador-cantidad{
+                    width: 30px;
+                    text-align: center;
+                }
+            }
+
+            .boton-eliminar{
+                border: none;
+                width: 30px;
+                justify-self: center;
+                cursor: pointer;
+                transition: all .3s;
+
+                svg{
+                    height: 25px;
+                    g{
+                        path{
+                            color: $-clr-secondary;
+                        }
+                    }
+                }
+
+                &:hover{
+                    filter: drop-shadow(0px 0px 2px $-clr-secondary);
+                    transform: scale(1.1);
+                    svg{
+                        g{
+                            path{
+                                color: $-clr-morado;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-productos {
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 30px;
+            padding-block: 10px;
+            font-size: 25px;
+            .total{
+                text-decoration: 1px underline;
+            }
+            .vaciar-carrito{
+                border-radius: 1rem;
+                padding-block: 5px;
+                padding-inline: 10px;
+                background: transparent;
+                border: 2px solid $-clr-secondary;
+                color: $-clr-secondary;
+                transition: all .3s;
+                text-transform: uppercase;
+                cursor: pointer;
+                
+                &:hover{
+                    box-shadow: 0px 0px 5px $-clr-secondary;
+                    transform: scale(1.1);
+                    background: $-clr-morado;
+                }
+            }
+        }
+    }
+
+    .parrafo-carrito-vacio{
+        margin-top: 150px;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    @media (max-width: 992px){
+        padding-inline: 120px;
+
+        .header-carrito{
+            margin-block: 20px;
+        }
+        .contenedor-productos{
+            z-index: 10;
+            .producto{
+                margin-bottom: 10px;
+                height: min-content;
+                a{
+                    h3{
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    @media (max-width: 768px){
+        padding-inline: 70px;
+
+    }
+
+    @media (max-width: 576px){
+        padding-inline: 30px;
+        padding-top: 40px;
+
+        .header-carrito{
+            width: 85%;
+            font-size: 10px;
+        }
+
+        .contenedor-productos{
+            .header-productos{
+                display: none;
+            }
+
+            .producto{
+                grid-template-columns: 2fr .1fr;
+                align-items: center;
+                justify-items: center;
+                height: max-content;
+                gap: 10px;
+                margin-inline: 20px;
+                margin-bottom: 0px;
+                a{
+                    text-decoration: none;
+                    grid-column: 1;
+                    grid-row: 1;
+                    padding-left: 40px;
+                    h3{
+                        font-size: 23px;
+                        width: 170px;
+                        text-align: center;
+                    }
+                }
+
+                .precio{
+                    padding: 0;
+                    border-bottom: 1px solid $-clr-morado;
+                    border-top: 1px solid $-clr-morado;
+                    padding-block: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-self: center;
+                    width: 200px;
+                    grid-column: 1/3;
+                    grid-row: 2;
+                    font-size: 20px;
+                    &::before{
+                        content: 'Precio unitario';
+                        text-decoration: underline 1px;
+                    }
+                }
+
+                .contenedor-cantidad{
+                    grid-column: 1/3;
+                    grid-row: 3;
+                    height: 40px;
+                    width: 200px;
+                    justify-content: center;
+                    padding: 0;
+                    padding-block: 25px;
+                    button{
+                        width: 40px;
+                        height: 40px;
+                        font-size: 25px;
+                    }
+                    .contador-cantidad{
+                        width: 50px;
+                        font-size: 25px;
+                    }
+                }
+
+                .subtotal{
+                    grid-column: 1/3;
+                    grid-row: 4;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-self: center;
+                    padding: 0;
+                    border-top: 1px solid $-clr-morado;
+                    width: 200px;
+                    padding-block: 10px;
+                    font-size: 20px;
+                    &::before{
+                        content: 'Subtotal';
+                        text-decoration: underline 1px;
+                    }
+                }
+
+                .boton-eliminar{
+                    grid-column: 2;
+                    grid-row: 1;
+                }
+            }
+
+            .footer-productos{
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                .total{
+                    font-size: 22.5px;
+                }
+    
+                .vaciar-carrito{
+                    width: 170px;
+                    height: 40px;
+                    background: $-clr-morado;
+                    box-shadow: 0px 0px 5px $-clr-secondary;
+                }
+            } 
+        }
+    }
+}

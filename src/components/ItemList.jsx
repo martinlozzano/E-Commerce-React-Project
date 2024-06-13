@@ -1,8 +1,8 @@
 import React from 'react'
 import { Item } from './Item'
-import { Link } from 'react-router-dom'
 import {Loader} from './Loader.jsx'
 import { Filter } from './Filter.jsx'
+import { CartWidget } from './CartWidget.jsx'
 
 export function ItemList ({productos}) {
   return (
@@ -11,12 +11,9 @@ export function ItemList ({productos}) {
       productos ?
       <>
         <Filter/>
+        <CartWidget/>
         <div className='item-container'>
-          {productos.map((producto) => (
-              <Link to={`/producto/${producto.id}`}>
-                <Item key={producto.id} producto={producto}/>
-              </Link>
-          ))}
+          {productos.map((producto) => (<Item key={producto.id} producto={producto}/>))}
         </div>
       </>
       : <Loader/>
