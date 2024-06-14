@@ -8,15 +8,16 @@ export const ItemDetailContainer = () => {
     
     let [item, setItem] = useState()
     const id = useParams().id
-    /* useEffect(() => {
+    useEffect(() => {
         setTimeout(() => {
-            pedirProducto("../src/data/productos.json")
+            fetch("../src/data/productos.json")
+                .then(res => res.json())
                 .then(data => setItem(data.find((product) => product.id == id)))
         }, 2000);
         
-    }, []) */
+    }, [])
 
-    const pedirProducto = () => {
+    /* const pedirProducto = () => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(dataProductos);
@@ -30,7 +31,7 @@ export const ItemDetailContainer = () => {
                 .then(data => setItem(data.find((product) => product.id == id)))
         }, 2000);
         
-    }, [])
+    }, []) */
 
   return (
     <>

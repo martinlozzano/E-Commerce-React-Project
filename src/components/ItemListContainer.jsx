@@ -28,7 +28,7 @@ export function ItemListContainer() {
     }
   }
 
-  const pedirProductos = () => {
+  /* const pedirProductos = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(dataProductos);
@@ -55,13 +55,13 @@ export function ItemListContainer() {
       
     })
       
-  }, [categoryId, tipoParametro]);
+  }, [categoryId, tipoParametro]); */
 
-  /* useEffect(() =>{
+  useEffect(() =>{
     verificarId()
 
       setTimeout(() => {
-        fetch("../data/productos.json")
+        fetch("../src/data/productos.json")
           .then(res => res.json())
           .then(data => {
             if (!categoryId) {
@@ -80,7 +80,7 @@ export function ItemListContainer() {
           })
 
       }, 2000);
-  }, [categoryId, tipoParametro]) */
+  }, [categoryId, tipoParametro])
 
   return (
     <>
