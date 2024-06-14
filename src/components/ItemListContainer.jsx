@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
 import { useParams } from 'react-router-dom'
-import categorias from '../data/categorias.json'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase/config'
 
