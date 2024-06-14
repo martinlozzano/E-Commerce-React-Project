@@ -2,36 +2,24 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { ItemDetail } from './ItemDetail'
 import { Loader } from './Loader'
-import dataProductos from '../data/productos.json'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase/config'
+
 
 export const ItemDetailContainer = () => {
     
     let [item, setItem] = useState()
     const id = useParams().id
+
     useEffect(() => {
-        setTimeout(() => {
-            fetch("../src/data/productos.json")
-                .then(res => res.json())
-                .then(data => setItem(data.find((product) => product.id == id)))
-        }, 2000);
-        
+      const productoRef = collection(db, "productos")
+
+      getDocs(productoRef)
+        .then(res => {
+          setItem(res.docs.map((prod) => {return{...prod.data(), id: prod.id}}).find((product) => product.id == id))
+        })
+
     }, [])
-
-    /* const pedirProducto = () => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(dataProductos);
-        }, 1000);
-      })
-    }
-
-    useEffect(() => {
-        setTimeout(() => {
-            pedirProducto()
-                .then(data => setItem(data.find((product) => product.id == id)))
-        }, 2000);
-        
-    }, []) */
 
   return (
     <>

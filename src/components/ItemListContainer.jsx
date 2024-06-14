@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
 import { useParams } from 'react-router-dom'
 import categorias from '../data/categorias.json'
-import dataProductos from '../data/productos.json'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase/config'
 
 export function ItemListContainer() {
 
@@ -11,76 +12,50 @@ export function ItemListContainer() {
   let [tipoParametro, setTipoParametro] = useState();
 
   let verificarId = () => {
-    for (let i of categorias.bodega) {
-      if(i.id === categoryId) {
-        setTipoParametro("bodega")
-      }
-    }
-    for (let i of categorias.blancos) {
-      if(i.id === categoryId) {
-        setTipoParametro("tipo")
-      }
-    }
-    for (let i of categorias.tintos) {
-      if(i.id === categoryId) {
-        setTipoParametro("tipo")
-      }
-    }
-  }
+    const categoriasRef = collection(db, "categorias")
 
-  /* const pedirProductos = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(dataProductos);
-      }, 1000);
-    })
+    getDocs(categoriasRef)
+      .then(res => {
+        res.docs[0].data().bodega.map(i => {
+          if(i.id === categoryId) {
+            setTipoParametro("bodega")
+          }
+        })
+        res.docs[0].data().blancos.map(i => {
+          if(i.id === categoryId) {
+            setTipoParametro("tipo")
+          }
+        })
+        res.docs[0].data().tintos.map(i => {
+          if(i.id === categoryId) {
+            setTipoParametro("tipo")
+          }
+        })
+      })
   }
 
   useEffect(() => {
     verificarId()
-    pedirProductos()
-    .then(res => {
-      if (!categoryId) {
-        setProductos(res)
-        
-      } else{
-        if(tipoParametro === "bodega") {
-          setProductos(res.filter((prod) => prod.bodegaId === categoryId))
-          
 
-        } else if(tipoParametro === "tipo"){
-          setProductos(res.filter((prod) => prod.tipoId === categoryId))
+    const productosRef = collection(db, "productos")
+    let data
+    
+    setTimeout(() => {
+      getDocs(productosRef)
+      .then((res) => {
+        data = res.docs.map((prod) => {return{...prod.data(), id: prod.id}})
+        if (!categoryId) {
+          setProductos(data)
+        } else{
+          if(tipoParametro === "bodega") {
+            setProductos(data.filter((prod) => prod.bodegaId === categoryId))
+          } else if(tipoParametro === "tipo"){
+            setProductos(data.filter((prod) => prod.tipoId === categoryId))
+          }
         }
-      }
-      
-    })
-      
-  }, [categoryId, tipoParametro]); */
-
-  useEffect(() =>{
-    verificarId()
-
-      setTimeout(() => {
-        fetch("../src/data/productos.json")
-          .then(res => res.json())
-          .then(data => {
-            if (!categoryId) {
-              setProductos(data)
-              
-            } else{
-              if(tipoParametro === "bodega") {
-                setProductos(data.filter((prod) => prod.bodegaId === categoryId))
-                
-
-              } else if(tipoParametro === "tipo"){
-                setProductos(data.filter((prod) => prod.tipoId === categoryId))
-              }
-            }
-            
-          })
-
-      }, 2000);
-  }, [categoryId, tipoParametro])
+      })
+    }, 1000)
+  }, [categoryId, tipoParametro]);
 
   return (
     <>

@@ -22,7 +22,7 @@ export const ItemDetail = ( {item} ) => {
         </div>
         <div className='item-detail'>
             <h2>{item.bodega} {item.tipo}</h2>
-            <span className='valoracion'>{item.valoracion}</span>
+            <span className='valoracion'>⭐⭐⭐⭐⭐</span>
             <span className='precio'>${item.precio}</span>
             <div className="medios-de-pago">
               <img src="../src/img/medios de pago/tarjeta-de-credito.png" alt="" />

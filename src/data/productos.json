@@ -5,7 +5,7 @@
     "bodega": "Bianchi",
     "tipoId": "cabernet-sauvignon",
     "tipo": "Cabernet Sauvignon",
-    "imagen": "./src/img/productos/CabernetSauvignon-Bianchi.jpg",
+    "imagen": "../../src/img/productos/CabernetSauvignon-Bianchi.jpg",
     "precio": 25.99,
     "descripcion": "Un vino tinto estructurado, con aromas a frutas negras, especias y un final persistente.",
     "valoracion": "⭐⭐⭐⭐⭐",

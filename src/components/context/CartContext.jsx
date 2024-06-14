@@ -34,11 +34,11 @@ export const CartProvider = ( {children} ) => {
     }
 
     const calcularTotal = () => {
-        return (carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)).toFixed(2)
+        return (carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0))
     }
 
     const calcularSubtotal = (prod) => {
-        return (prod.precio * prod.cantidad).toFixed(2)
+        return (prod.precio * prod.cantidad)
     }
 
     const eliminarProductoCarrito = (item) => {
