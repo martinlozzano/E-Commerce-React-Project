@@ -25,19 +25,19 @@ export const ItemDetail = ( {item} ) => {
             <span className='valoracion'>⭐⭐⭐⭐⭐</span>
             <span className='precio'>${item.precio}</span>
             <div className="medios-de-pago">
-              <img src="./img/medios de pago/tarjeta-de-credito.png" alt="" />
+              <img src="../../public/img/medios de pago/tarjeta-de-credito.png" alt="" />
               <div className='texto'>
                 <span className='span-1'>medios de pago</span>
                 <span className='span-2'>Ver medios de pago</span>
               </div>
               <div className='tipos'>
-                <img src="./img/medios de pago/visa.png" alt="" />
-                <img src="./img/medios de pago/MasterCard_Logo.svg.png" alt="" />
-                <img src="./img/medios de pago/pngwing.com.png" alt="" />
+                <img src="../../public/img/medios de pago/visa.png" alt="" />
+                <img src="../../public/img/medios de pago/MasterCard_Logo.svg.png" alt="" />
+                <img src="../../public/img/medios de pago/pngwing.com.png" alt="" />
               </div>
             </div>
             <div className='envios'>
-              <img src="./img/camion-envio.png" alt="" />
+              <img src="../../public/img/camion-envio.png" alt="" />
               <div className='texto'>
                 <span className='span-1'>envios a todo el pais</span>
                 <span className='span-2'>Calcular costo de envio</span>
