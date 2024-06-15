@@ -52,7 +52,7 @@
         }
         .card-description{
             text-align: center;
-            font-size: 15.5px;
+            font-size: 15px;
             padding: 4px;
             background-color: $-clr-secondary;
             color: $-clr-primary;
@@ -110,8 +110,12 @@
         }
 
         .buttons{
+            flex-direction: column-reverse;
             button{
-                font-size: 10px; 
+                height: 30px;
+                margin-block: 3px;
+                width: 242px;
+                font-size: 14px; 
             }
         }
     }

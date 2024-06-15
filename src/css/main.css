@@ -263,9 +263,10 @@ body {
   }
   .header .contenedor-logo .texto-logo {
     width: 75px;
+    top: -23px;
   }
   .header .contenedor-logo .texto-logo h1 {
-    font-size: 9.5px;
+    font-size: 9px;
   }
   .header .navbar-sm-container {
     padding-inline: 24px;
@@ -1448,7 +1449,7 @@ body {
 }
 .card .card-detail .card-description {
   text-align: center;
-  font-size: 15.5px;
+  font-size: 15px;
   padding: 4px;
   background-color: rgba(221, 221, 221, 0.8666666667);
   color: #242424;
@@ -1501,8 +1502,14 @@ body {
   .card .card-detail {
     gap: 10px;
   }
+  .card .buttons {
+    flex-direction: column-reverse;
+  }
   .card .buttons button {
-    font-size: 10px;
+    height: 30px;
+    margin-block: 3px;
+    width: 242px;
+    font-size: 14px;
   }
 }
 
