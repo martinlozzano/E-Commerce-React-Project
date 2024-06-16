@@ -551,14 +551,13 @@ body {
 
 .item-detail-container {
   width: 100%;
-  min-height: 100vh;
 }
 .item-detail-container .grilla {
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 2fr 2fr;
   grid-template-rows: 0.2fr 0.8fr 0.3fr 1fr 0.5fr;
   margin-inline: 450px;
-  height: 103%;
   background-color: #333232;
 }
 .item-detail-container .grilla .image-container {
@@ -575,6 +574,7 @@ body {
 }
 .item-detail-container .grilla .image-container img {
   height: inherit;
+  border-radius: 1rem;
 }
 .item-detail-container .grilla .item-detail {
   grid-column: 1;
@@ -582,6 +582,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-inline: 30px;
+  gap: 8px;
 }
 .item-detail-container .grilla .item-detail h2 {
   padding-top: 10px;
@@ -603,9 +604,9 @@ body {
   display: flex;
   padding-block: 10px;
   align-items: center;
-  justify-content: space-around;
   border-bottom: 1px solid rgba(221, 221, 221, 0.8666666667);
   border-top: 1px solid rgba(221, 221, 221, 0.8666666667);
+  padding-inline: 5px;
 }
 .item-detail-container .grilla .item-detail .medios-de-pago img {
   width: auto;
@@ -614,9 +615,9 @@ body {
 .item-detail-container .grilla .item-detail .medios-de-pago .texto {
   display: flex;
   flex-direction: column;
-  width: 250px;
   padding-inline: 20px;
   font-weight: bold;
+  width: 60%;
 }
 .item-detail-container .grilla .item-detail .medios-de-pago .texto .span-1 {
   font-size: 15px;
@@ -643,8 +644,8 @@ body {
 .item-detail-container .grilla .item-detail .envios {
   grid-row: 4;
   padding-block: 10px;
-  display: flex;
   padding-inline: 7px;
+  display: flex;
   border-bottom: 1px solid rgba(221, 221, 221, 0.8666666667);
 }
 .item-detail-container .grilla .item-detail .envios img {
@@ -654,7 +655,7 @@ body {
 .item-detail-container .grilla .item-detail .envios .texto {
   display: flex;
   flex-direction: column;
-  padding-inline: 26px;
+  padding-inline: 20px;
   font-weight: bold;
 }
 .item-detail-container .grilla .item-detail .envios .texto .span-1 {
@@ -764,12 +765,6 @@ body {
   .item-detail-container .grilla .item-detail .medios-de-pago img {
     height: 40px;
   }
-  .item-detail-container .grilla .item-detail .medios-de-pago .texto {
-    padding: 0;
-    padding-left: 10px;
-    margin-right: 150px;
-    width: 170px;
-  }
   .item-detail-container .grilla .item-detail .medios-de-pago .texto .span-1 {
     font-size: 16.5px;
   }
@@ -779,15 +774,8 @@ body {
   .item-detail-container .grilla .item-detail .medios-de-pago .tipos img {
     height: 20px;
   }
-  .item-detail-container .grilla .item-detail .envios {
-    padding-left: 10px;
-  }
   .item-detail-container .grilla .item-detail .envios img {
     height: 40px;
-  }
-  .item-detail-container .grilla .item-detail .envios .texto {
-    padding: 0;
-    padding-left: 25px;
   }
   .item-detail-container .grilla .item-detail .envios .texto .span-1 {
     font-size: 16.5px;
@@ -829,12 +817,6 @@ body {
   .item-detail-container .grilla .image-container {
     height: 500px;
   }
-  .item-detail-container .grilla .item-detail .envios {
-    padding-left: 15px;
-  }
-  .item-detail-container .grilla .item-detail .envios .texto {
-    padding-left: 30px;
-  }
 }
 @media (max-width: 576px) {
   .item-detail-container .grilla {
@@ -842,6 +824,9 @@ body {
   }
   .item-detail-container .grilla .image-container {
     margin-top: 0;
+    border-radius: 1rem 1rem 0rem 0rem;
+    width: 100%;
+    background: white;
   }
   .item-detail-container .grilla .item-detail h2 {
     font-size: 25px;
@@ -849,11 +834,14 @@ body {
   .item-detail-container .grilla .item-detail .precio {
     font-size: 22px;
   }
+  .item-detail-container .grilla .item-detail .medios-de-pago {
+    padding-right: 0;
+  }
   .item-detail-container .grilla .item-detail .medios-de-pago img {
     height: 30px;
   }
   .item-detail-container .grilla .item-detail .medios-de-pago .texto {
-    margin-right: 0;
+    width: 57%;
   }
   .item-detail-container .grilla .item-detail .medios-de-pago .texto .span-1 {
     font-size: 13.5px;
@@ -864,15 +852,8 @@ body {
   .item-detail-container .grilla .item-detail .medios-de-pago .tipos img {
     height: 14px;
   }
-  .item-detail-container .grilla .item-detail .envios {
-    padding-inline: 5px;
-  }
   .item-detail-container .grilla .item-detail .envios img {
     height: 30px;
-  }
-  .item-detail-container .grilla .item-detail .envios .texto {
-    padding: 0;
-    padding-left: 13px;
   }
   .item-detail-container .grilla .item-detail .envios .texto .span-1 {
     font-size: 13.5px;

@@ -1,13 +1,12 @@
 .item-detail-container{
     width: 100%;
-    min-height: 100vh;
     
     .grilla{
+        min-height: 100vh;
         display: grid;
         grid-template-columns: 2fr 2fr;
         grid-template-rows: .2fr .8fr .3fr 1fr .5fr;
         margin-inline: 450px;
-        height: 103%;
         background-color: #333232;
         
         .image-container{
@@ -24,6 +23,7 @@
             
             img{
                 height: inherit;
+                border-radius: 1rem;
             }
         }
     
@@ -33,6 +33,7 @@
             display: flex;
             flex-direction: column;
             padding-inline: 30px;
+            gap: 8px;
     
             h2{
                 padding-top: 10px;
@@ -57,9 +58,9 @@
                 display: flex;
                 padding-block: 10px;
                 align-items: center;
-                justify-content: space-around;
                 border-bottom: 1px solid $-clr-secondary;
                 border-top: 1px solid $-clr-secondary;
+                padding-inline: 5px;
                 img{
                     width: auto;
                     height: 30px;
@@ -67,9 +68,9 @@
                 .texto{
                     display: flex;
                     flex-direction: column;
-                    width: 250px;
                     padding-inline: 20px;
                     font-weight: bold;
+                    width: 60%;
                     .span-1{
                         font-size: 15px;
                         text-transform: uppercase;
@@ -98,8 +99,8 @@
             .envios{
                 grid-row: 4;
                 padding-block: 10px;
-                display: flex;
                 padding-inline: 7px;
+                display: flex;
                 border-bottom: 1px solid $-clr-secondary;
 
                 img{
@@ -110,7 +111,7 @@
                 .texto{
                     display: flex;
                     flex-direction: column;
-                    padding-inline: 26px;
+                    padding-inline: 20px;
                     font-weight: bold;
                     .span-1{
                         font-size: 15px;
@@ -234,10 +235,6 @@
                         height: 40px;
                     }
                     .texto{
-                        padding: 0;
-                        padding-left: 10px;
-                        margin-right: 150px;
-                        width: 170px;
                         .span-1{
                             font-size: 16.5px;
                         }
@@ -253,13 +250,10 @@
                 }
 
                 .envios{
-                    padding-left: 10px;
                     img{
                         height: 40px;
                     }
                     .texto{
-                        padding: 0;
-                        padding-left: 25px;
                         .span-1{
                             font-size: 16.5px;
                         }
@@ -310,15 +304,6 @@
             .image-container{
                 height: 500px;
             }
-
-            .item-detail{
-                .envios{
-                    padding-left: 15px;
-                    .texto{
-                        padding-left: 30px;
-                    }
-                }
-            }
         }
     }
 
@@ -328,6 +313,9 @@
 
             .image-container{
                 margin-top: 0;
+                border-radius: 1rem 1rem 0rem 0rem;
+                width: 100%;
+                background: white;
             }
 
             .item-detail{
@@ -340,12 +328,12 @@
                 }
 
                 .medios-de-pago{
+                    padding-right: 0;
                     img{
                         height: 30px;
                     }
                     .texto{
-                        margin-right: 0;
-
+                        width: 57%;
                         .span-1{
                             font-size: 13.5px;
                         }
@@ -361,13 +349,10 @@
                 }
 
                 .envios{
-                    padding-inline: 5px;
                     img{
                         height: 30px;
                     }
                     .texto{
-                        padding: 0;
-                        padding-left: 13px;
                         .span-1{
                             font-size: 13.5px;
                         }

@@ -53,7 +53,7 @@ export const ItemDetail = ( {item} ) => {
           </div>
         </div>
         <div className="descripcion">
-          <p className='texto-descriptivo'>{item.descripcion}</p>
+          <p className='texto-descriptivo'>{item.descripcionExpandida}</p>
           <div className="caracteristicas">
             <p className='titulo-caracteristicas'> Caracteristicas</p>
             <div>
