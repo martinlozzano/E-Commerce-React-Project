@@ -32,7 +32,6 @@ function App() {
             <Route path="/checkout_carrito/:checkoutId" element={<CarritoCheckout/>}/> 
             <Route path="/compra_finalizada" element={<CompraFinalizada/>}/> 
             <Route path="/*" element={<NotFound/>}/>
-
           </Routes>
           <Footer />
         </BrowserRouter>
