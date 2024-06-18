@@ -1,0 +1,184 @@
+.checkout-datos-container{
+    width: 650px;
+    background: $-clr-secondary;
+    height: fit-content;
+    min-height: 550px;
+    border-radius: 1rem;
+    padding: 20px 30px;
+    color: $-clr-primary;
+
+    h2{
+        text-decoration: underline;
+    }
+
+    .formulario-datos{
+        padding: 40px 20px;
+        form, .direccion{
+            display: flex;
+            flex-direction: column;
+            gap: 2.1rem;
+
+            
+            .bg-container{
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .container{
+                position: relative;
+                transition: all .3s;
+    
+                input{
+                    transition: all .3s;
+                    padding: 10px 20px;
+                    border-radius: 1rem;
+                    border: 1px solid;
+                    height: 30px;
+                    width: 200px;
+                    font-size: 18px;
+                    outline-color: transparent;
+                    &:focus {
+                        border: 3px solid $-clr-morado;
+                        box-shadow: 0px 0px 10px $-clr-dorado;
+                    }
+                }
+    
+                label{
+                    color: $-clr-morado;
+                    font-size: 16px;
+                    filter: drop-shadow(0px 0px 3px $-clr-secondary);
+                    user-select: none;
+                    position: absolute;
+                    top: -25px;
+                    left: 5px;
+                }
+            }
+            
+            .mail-container{
+                input{
+                    width: 400px;
+                }
+            }
+    
+            .telefono-container{
+                display: flex;
+                gap: 8px;
+                .telefono-prefijo{
+                    input{
+                        width: 120px;
+                    }
+
+                    label{
+                        font-size: 12px;
+                        top: -23px;
+                    }
+
+                }
+            }
+
+            .numeracion-piso-depto{
+                *{
+                    input{
+                        width: 150px;
+                    }
+                }
+            }
+
+            .aclaraciones{
+                input{
+                    height: 100px;
+                    width: 100%;
+                }
+            }
+
+            .boton-submit{
+                align-self: center;
+                
+
+                button{
+                    transition: all .3s;
+                    width: 180px;
+                    height: 40px;
+                    border-radius: 2rem;
+                    border: 1px solid;
+                    background: $-clr-primary;
+                    font-size: 20px;
+                    cursor: pointer;
+                    color: $-clr-secondary;
+
+                    a{
+                        text-decoration: none;
+                        color: $-clr-secondary;
+                    }
+
+                    &:hover{
+                        box-shadow: 0px 0px 5px $-clr-secondary;
+                        transform: scale(1.1);
+                        background: $-clr-morado;
+                    }
+                }
+
+                button:disabled{
+                    cursor:default;
+                    background: rgba($color: $-clr-primary, $alpha: .2);
+                     
+                    &:hover {
+                        box-shadow:none;
+                        transform: none;
+                        background: rgba($color: $-clr-primary, $alpha: .2);
+                    }
+                }
+
+
+
+                .no-habilitado{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        width: 450px;
+        .formulario-datos{
+            form, .direccion{
+                .container{
+                    input{
+                        width: 150px;
+                        font-size: 16px;
+                    }
+                }
+
+                .mail-container{
+                    input{
+                        width: 300px;
+                    }
+                }
+
+                .documento-telefono{
+                    flex-direction: column;
+                    gap: 2rem;
+                    .telefono-container{
+                        gap: 2rem;
+                        .telefono-sufijo{
+                            input{
+                                width: 200px;
+                            }
+                        }
+                    }
+                }
+
+                .numeracion-piso-depto{
+                    gap: 3rem;
+                    flex-wrap: wrap;
+                }
+
+                .aclaraciones{
+                    input{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

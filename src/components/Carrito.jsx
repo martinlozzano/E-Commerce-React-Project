@@ -25,8 +25,8 @@ export const Carrito = () => {
 
           {carrito.map((producto) => 
             <div key={producto.id} className='producto'>
-              <Link key={producto.id} to={`/producto/${producto.id}`}>
-                <h3 key={producto.id}>{producto.bodega} {producto.tipo}</h3>
+              <Link  to={`/producto/${producto.id}`}>
+                <h3 >{producto.bodega} {producto.tipo}</h3>
               </Link>
               <span className='precio'>${producto.precio}</span>
               <div className='contenedor-cantidad'>
@@ -51,7 +51,10 @@ export const Carrito = () => {
           
           <div className='footer-productos'>
               <div className='total'>Total: ${calcularTotal()}</div>
-              <button onClick={vaciarCarrito} className="vaciar-carrito">Vaciar carrito</button>
+              <div className="botones-carrito">
+                <button onClick={vaciarCarrito} className="vaciar-carrito">Vaciar carrito</button>
+                <Link className='boton-continuar' to={"/checkout_carrito/datos"}>Finalizar compra</Link>
+              </div>
           </div>
 
         </div> 

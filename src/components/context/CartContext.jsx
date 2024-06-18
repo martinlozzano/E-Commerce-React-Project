@@ -1,10 +1,10 @@
 import React, { useState, createContext } from 'react'
-
 export const CartContext = createContext()
 
 export const CartProvider = ( {children} ) => {
+    let [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
 
-    let [carrito, setCarrito] = useState([])
+    localStorage.setItem("carrito", JSON.stringify(carrito))
 
     const agregarCarrito = (item, cantidad) => {
 
@@ -48,7 +48,6 @@ export const CartProvider = ( {children} ) => {
     const vaciarCarrito = () => {
         setCarrito([])
     }
-
 
     return (
         <CartContext.Provider value={ {carrito, vaciarCarrito, calcularSubtotal, sumarCantidad, restarCantidad, agregarCarrito, calcularCantidadCarrito, calcularTotal, eliminarProductoCarrito} }>

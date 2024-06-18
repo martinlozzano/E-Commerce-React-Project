@@ -1,0 +1,124 @@
+.compra-finalizada-container{
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    background-color: $-clr-primary;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo-container{
+        margin-top: 20px;
+        margin-bottom: 50px;
+        .logo {
+            width: 200px;
+            height: auto;
+            background: $-clr-primary;
+            transform: rotateY(180deg);
+            color: $-clr-secondary;
+            background-color: transparent;
+    
+            path {
+                filter: drop-shadow(0px 0px 150px $-clr-secondary);
+            }
+        }
+
+        .texto-logo{
+            background: $-clr-primary;
+            width: 205px;
+            height: 45px;
+            z-index: 900;
+            position: relative;
+            left: 0px;
+            top: -40px;
+    
+            h1{
+                font-size: 28px;
+                letter-spacing: 3px;
+                width: 205px;
+                text-align: center;
+                font-weight: bold;
+                z-index: 100;
+                color: $-clr-secondary;
+                filter: drop-shadow(0px 0px 3.5px $-clr-secondary);
+                user-select: none;
+            }
+        }
+    }
+
+    h2{
+        font-size: 50px;
+        filter: drop-shadow(0px 0px 20px $-clr-secondary);
+    }
+
+    p{
+        font-size: 25px;
+        margin-block: 20px;
+        color: $-clr-dorado;
+        text-decoration: underline;
+    }
+
+    .volver-inicio{
+        border: 2px solid $-clr-secondary;
+        border-radius: 6px;
+        width: 240px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        .texto{
+            text-decoration: none;
+            color: $-clr-secondary;
+            padding-inline: 8px;
+            font-size: 22.5px;
+            transition: all .5s;
+            letter-spacing: .7px;
+        }
+
+        &::before, &::after {
+            content: '';
+            background: $-clr-secondary;
+            width: 12.5px;
+            height: 18.5px;
+            transition: all .5s;
+        }
+
+        &::before{
+            clip-path: polygon(
+                    100%       0%,
+                    0%       50%,
+                    100%     100%,
+                    100%     90%,
+                    20%     50%,
+                    100%     10%
+            );
+        }
+
+        &::after{
+            clip-path: polygon(
+                    0%       0%,
+                    0%       10%,
+                    80%     50%,
+                    0%     90%,
+                    0%     100%,
+                    100%     50%
+            );
+        }
+
+        &:hover{
+            border-color: $-clr-morado;
+            filter: drop-shadow(0px 0px 2px $-clr-secondary);
+            .texto{
+                padding-inline: 12px;
+                transform: scale(1.05);
+            }
+            &::after, &::before{
+                background: $-clr-morado;
+            }
+        }
+    }
+}

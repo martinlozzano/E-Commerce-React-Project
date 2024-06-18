@@ -9,13 +9,13 @@ export function Item({producto}) {
 
   return (
       <div className='card'>
-        <Link key={producto.id} to={`/producto/${producto.id}`}>
+        <Link to={`/producto/${producto.id}`}>
           <div className='image-container'>
             <img src={`.${producto.imagen}`} alt="" />
           </div>
         </Link>
         <div className='card-detail'>
-          <Link key={producto.id} to={`/producto/${producto.id}`}>
+          <Link to={`/producto/${producto.id}`}>
             <div className='nombre'>
               <h2 className='card-bodega'>{producto.bodega}</h2>
               <h3 className='card-tipo'>{producto.tipo}</h3>
@@ -25,7 +25,7 @@ export function Item({producto}) {
           <p className='card-description'>{producto.descripcion}</p>
         </div>
         <div className='buttons'>
-          <Link key={producto.id} to={`/producto/${producto.id}`}>
+          <Link to={`/producto/${producto.id}`}>
             <button className='boton-ver-mas'>Ver mas</button>
           </Link>
           <button onClick={() => agregarCarrito(producto, 1)} className='boton-agregar-al-carrito'>Agregar al carrito</button>

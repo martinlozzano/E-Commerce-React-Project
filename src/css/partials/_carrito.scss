@@ -27,7 +27,7 @@
 
     .contenedor-productos{
         margin-top: 10px;
-        display: felx;
+        display: flex;
         flex-direction: column;
         border-radius: 1rem;
         border: 1px solid $-clr-secondary;
@@ -144,21 +144,28 @@
             .total{
                 text-decoration: 1px underline;
             }
-            .vaciar-carrito{
-                border-radius: 1rem;
-                padding-block: 5px;
-                padding-inline: 10px;
-                background: transparent;
-                border: 2px solid $-clr-secondary;
-                color: $-clr-secondary;
-                transition: all .3s;
-                text-transform: uppercase;
-                cursor: pointer;
-                
-                &:hover{
-                    box-shadow: 0px 0px 5px $-clr-secondary;
-                    transform: scale(1.1);
-                    background: $-clr-morado;
+            .botones-carrito{
+                display: flex;
+                gap: 1rem;
+                .vaciar-carrito, .boton-continuar{
+                    border-radius: 1rem;
+                    padding-block: 5px;
+                    padding-inline: 10px;
+                    background: transparent;
+                    border: 2px solid $-clr-secondary;
+                    color: $-clr-secondary;
+                    transition: all .3s;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    font-size: 15px;
+                    text-decoration: none;
+                    font-family: Arial, Helvetica, sans-serif;
+                    
+                    &:hover{
+                        box-shadow: 0px 0px 5px $-clr-secondary;
+                        transform: scale(1.1);
+                        background: $-clr-morado;
+                    }
                 }
             }
         }
