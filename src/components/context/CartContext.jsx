@@ -1,4 +1,6 @@
 import React, { useState, createContext } from 'react'
+import Swal from 'sweetalert2'
+
 export const CartContext = createContext()
 
 export const CartProvider = ( {children} ) => {
@@ -17,6 +19,18 @@ export const CartProvider = ( {children} ) => {
             carrito[itemIndex].cantidad = carrito[itemIndex].cantidad + cantidad
             setCarrito([...carrito])
         } 
+
+        Swal.fire({
+            toast: true,
+            title: "Producto agregado al carrito",
+            showConfirmButton: false,
+            timer: 1500,
+            position: "top-end",
+
+            customClass: {
+                container: "toast",
+            }
+        })
     }
 
     const sumarCantidad = (item) => {

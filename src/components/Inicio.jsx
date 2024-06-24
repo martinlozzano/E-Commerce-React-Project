@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import Swal from "sweetalert2"
 import { Link } from 'react-router-dom'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase/config'
+import {Loader} from '../components/Loader'
 
 
 export const Inicio = () => {
 
+    let [categorias, setCategorias] = useState()
+
+    useEffect(() => {
+        const categoriasRef = collection(db, "categorias")
+        getDocs(categoriasRef)
+        .then(res => {
+            setCategorias(res.docs[0].data()) 
+        })
+    }, [])
+
+    
+    
     if(localStorage.getItem("edad") !== "mayor"){
         Swal.fire({
             title: '¿Tienes mas de 18 años?',
@@ -18,6 +33,9 @@ export const Inicio = () => {
             padding: "10px",
             allowEscapeKey: false,
             allowOutsideClick: false,
+            customClass: {
+                container: "popup-inicio"
+            }
         }).then((result) => {
             if (result.isDenied) {
                 Swal.fire({
@@ -36,111 +54,61 @@ export const Inicio = () => {
     
   return (
     <div className='inicio-container'>
-        <h2>Conocé nuestra variedad de vinos</h2>
-        <div className="bg-container">
-            <div className='container-tintos'>
-                <div className="titulo-tipo">
-                    <h3>Vinos tintos</h3>
-                </div>
-                <div className="links-container">
-                    <Link to={"/categorias/cabernet-sauvignon"}>
-                        <div className='link-item'>
-                            <h4>Cabernet Sauvignon</h4>
-                            <img className='slide-in-right' src={"../img/inicio/cabernet-sauv.png"} />
-                            <div className="variedad">
-                                <h5>Variedad</h5>
-                                <p>100% Cabernet Sauvignon</p>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to={"/categorias/merlot"}>
-                        <div className='link-item'>
-                            <h4>Merlot</h4>
-                            <img className='slide-in-right' src={"../img/inicio/merlot.png"} alt="" />
-                            <div className="variedad">
-                                <h5>Variedad</h5>
-                                <p>100% Merlot</p>
-                            </div>
-                            
-                        </div>
-                    </Link>
-                    <Link to={"/categorias/malbec"}>
-                        <div className='link-item'>
-                            <h4>Malbec</h4>
-                            <img className='slide-in-right' src={"../img/inicio/malbec.png"} alt="" />
-                            <div className="variedad">
-                                <h5>Variedad</h5>
-                                <p>100% Malbec</p>
-                            </div>
-                            
-                        </div>
-                    </Link>
-                    <Link to={"/categorias/pinot-noir"}>
-                        <div className='link-item'>
-                            <h4>Pinot Noir</h4>
-                            <img className='slide-in-right' src={"../img/inicio/pinot-noir.png"} alt="" />
-                            <div className="variedad">
-                                <h5>Variedad</h5>
-                                <p>100% Pinot Noir</p>
-                            </div>
-                            
-                        </div>
-                    </Link>
-                </div>
-            </div>
-            <div className='container-blancos'>
-                <div className="titulo-tipo">
+    {
+        categorias ?
+        <>
+            <h2>Conocé nuestra variedad de vinos</h2>
+            <div className="bg-container">
+                <div className='container-tintos'>
+                    <div className='titulo-tipo'>
                     <h3>Vinos blancos</h3>
+                    </div>
+                    {
+                    categorias.tintos.map((tinto) => {
+                        return(
+                            <div key={tinto.id} className="links-container">
+                                <Link to={`/categorias/${tinto.id}`}>
+                                    <div className='link-item'>
+                                        <h4>{tinto.nombre}</h4>
+                                        <img className='slide-in-right' src={`../img/inicio/${tinto.id}.png`} />
+                                        <div className="variedad">
+                                            <h5>Variedad</h5>
+                                            <p>100% {tinto.nombre}</p>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        )
+                    })
+                    }
                 </div>
-                <div className="links-container">
-                    <Link to={"/categorias/torrontes"}>
-                        <div className='link-item'>
-                            <h4>Torrontes</h4>
-                            <img className='slide-in-right' src={"../img/inicio/torrontes.png"} alt="" />
-                            <div className="variedad">
-                                <h5>Variedad</h5>
-                                <p>100% Torrontes</p>
+                <div className='container-blancos'>
+                    <div className='titulo-tipo'>
+                    <h3>Vinos blancos</h3>
+                    </div>
+                    {
+                    categorias.blancos.map((blanco) => {
+                        return(
+                            <div key={blanco.id} className="links-container">
+                                <Link to={`/categorias/${blanco.id}`}>
+                                    <div className='link-item'>
+                                        <h4>{blanco.nombre}</h4>
+                                        <img className='slide-in-right' src={`../img/inicio/${blanco.id}.png`} />
+                                        <div className="variedad">
+                                            <h5>Variedad</h5>
+                                            <p>100% {blanco.nombre}</p>
+                                        </div>
+                                    </div>
+                                </Link>
                             </div>
-                            
-                        </div>
-                    </Link>
-                    <Link to={"/categorias/sauvignon-blanc"}>
-                        <div className='link-item'>
-                            <h4>Sauvignon Blanc</h4>
-                            <img className='slide-in-right' src={"../img/inicio/sauvignon-blanc.png"} alt="" />
-                            <div className="variedad">
-                                <h5>Variedad</h5>
-                                <p>100% Sauvignon Blanc</p>
-                            </div>
-                            
-                        </div>
-                    </Link>
-                    <Link to={"/categorias/chardonnay"}>
-                        <div className='link-item'>
-                            <h4>Chardonnay</h4>
-                            <img className='slide-in-right' src={"../img/inicio/chardonnay.png"} alt="" />
-                            <div className="variedad">
-                                <h5>Variedad</h5>
-                                <p>100% Chardonnay</p>
-                            </div>
-                            
-                        </div>
-                    </Link>
-                    <Link to={"/categorias/dulce"}>
-                        <div className='link-item'>
-                            <h4>Dulce</h4>
-                            <img className='slide-in-right' src={"../img/inicio/dulce.png"} alt="" />
-                            <div className="variedad">
-                                <h5>Variedad</h5>
-                                <p>100% Dulce</p>
-                            </div>
-                            
-                        </div>
-                    </Link>
+                        )
+                    })
+                    }
                 </div>
             </div>
-            
-        </div>
+        </>
+        : <Loader/>
+    }
     </div>
   )
 }

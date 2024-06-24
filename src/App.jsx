@@ -29,7 +29,7 @@ function App() {
             <Route path="/producto/:id" element={<ItemDetailContainer />}/>
             <Route path="/contactanos" element={<Proximamente greeting={"Proximamente"}/>}/>
             <Route path="/carrito" element={<Carrito/>}/>
-            <Route path="/checkout_carrito/:checkoutId" element={<CarritoCheckout/>}/> 
+            <Route path="/checkout_carrito" element={<CarritoCheckout/>}/> 
             <Route path="/compra_finalizada" element={<CompraFinalizada/>}/> 
             <Route path="/*" element={<NotFound/>}/>
           </Routes>

@@ -53,7 +53,7 @@ export const Carrito = () => {
               <div className='total'>Total: ${calcularTotal()}</div>
               <div className="botones-carrito">
                 <button onClick={vaciarCarrito} className="vaciar-carrito">Vaciar carrito</button>
-                <Link className='boton-continuar' to={"/checkout_carrito/datos"}>Finalizar compra</Link>
+                <Link className='boton-continuar' to={"/checkout_carrito"}>Finalizar compra</Link>
               </div>
           </div>
 

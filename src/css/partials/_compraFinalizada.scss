@@ -1,6 +1,7 @@
 .compra-finalizada-container{
     position: absolute;
     top: 0;
+    left: 0;
     z-index: 9999;
     background-color: $-clr-primary;
     width: 100%;
@@ -51,12 +52,29 @@
     h2{
         font-size: 50px;
         filter: drop-shadow(0px 0px 20px $-clr-secondary);
+        text-align: center;
     }
 
-    p{
+    .seguimiento{
         font-size: 25px;
         margin-block: 20px;
-        color: $-clr-dorado;
+        color: $-clr-secondary;
+        
+        text-align: center;
+        border: 2px solid $-clr-morado;
+        border-radius: 1rem;
+        padding: 15px;
+
+        span{
+            color: $-clr-dorado;
+        }
+    }
+
+    .agradecimiento{
+        font-size: 22px;
+        color:$-clr-dorado;
+        margin-bottom: 30px;
+        text-align: center;
         text-decoration: underline;
     }
 
@@ -119,6 +137,37 @@
             &::after, &::before{
                 background: $-clr-morado;
             }
+        }
+    }
+
+    @media (max-width:576px) {
+        padding-inline: 20px;
+
+        .logo-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            .logo {
+                width: 150px;
+            }
+    
+            .texto-logo{
+                h1{
+                    font-size: 24px;
+                }
+            }
+        }
+
+        h2{
+            font-size: 200%;
+        }
+        .seguimiento{
+            font-size: 120%;
+        }
+        .agradecimiento{
+            font-size: 120%;
         }
     }
 }

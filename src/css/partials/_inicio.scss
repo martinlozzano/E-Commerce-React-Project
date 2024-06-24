@@ -76,7 +76,6 @@
 
                     h4{
                         font-size: 35px;
-                        text-decoration: underline $-clr-morado;
                         width: 320px;
                     }
 
@@ -173,6 +172,8 @@
         h2{
             font-size: 100%;
             margin-top: 70px;
+            text-align: center;
+            margin-inline: 20px;
 
             &::before{
                 width: 30px;
@@ -216,7 +217,7 @@
 
 }
 
-.swal2-container{
+.popup-inicio{
     .swal2-popup{
         box-shadow: 0px 0px 50px $-clr-secondary;
         background: rgba($color: $-clr-secondary, $alpha: 3.0);

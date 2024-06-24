@@ -28,7 +28,7 @@
                 position: relative;
                 transition: all .3s;
     
-                input{
+                input, textarea{
                     transition: all .3s;
                     padding: 10px 20px;
                     border-radius: 1rem;
@@ -85,7 +85,7 @@
             }
 
             .aclaraciones{
-                input{
+                textarea{
                     height: 100px;
                     width: 100%;
                 }
@@ -176,6 +176,59 @@
                 .aclaraciones{
                     input{
                         width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width:576px) {
+        width: 100%;
+
+        .formulario-datos{
+            padding-inline: 0;
+            form{
+                div{
+                    flex-direction: column;
+                    gap: 40px;
+                    input{
+                        height: 35px !important;
+                        width: 100% !important;
+                    }
+                }
+
+                .telefono-container{
+                    flex-direction: row;
+                    gap: 10px !important;
+                    input{
+                        margin-top: 12px;
+                        padding-inline: 10px;
+                    }
+                    .telefono-prefijo{
+                        width: 120px;
+                    }
+
+                    .telefono-sufijo{
+                        width: 100%;
+                    }
+                }
+
+                .numeracion-piso-depto{
+                    flex-flow: row wrap;
+                    gap: 5px !important;
+                    justify-content: start !important;
+                    .numeracion-container{
+                        width: 100%;
+                        margin-bottom: 2rem;
+                    }
+                    .piso-container, .dpto-container{
+                        width: 48%;
+                    }
+                }
+
+                .aclaraciones{
+                    textarea{
+                        height: 80px !important;
                     }
                 }
             }

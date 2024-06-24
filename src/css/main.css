@@ -550,6 +550,31 @@ body {
   }
 }
 
+@media (max-width: 576px) {
+  .swal2-toast-shown .swal2-container.swal2-top-end {
+    width: 100% !important;
+    padding-inline: 5%;
+    margin-inline: 0px;
+  }
+}
+
+.swal2-toast-shown .toast {
+  height: 80px;
+  scrollbar-width: none;
+  padding: 0;
+  margin-inline: 30px;
+  margin-top: 80px;
+  filter: drop-shadow(0px 0px 30px rgba(221, 221, 221, 0.8666666667));
+}
+.swal2-toast-shown .toast .swal2-popup.swal2-toast {
+  border-radius: 1rem;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #9f8f53;
+  background: #242424;
+  color: rgba(221, 221, 221, 0.8666666667);
+}
+
 .item-detail-container {
   width: 100%;
 }
@@ -1068,6 +1093,8 @@ body {
   font-size: 15px;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  align-self: center;
 }
 .contenedor-carrito .contenedor-productos .footer-productos .botones-carrito .vaciar-carrito:hover, .contenedor-carrito .contenedor-productos .footer-productos .botones-carrito .boton-continuar:hover {
   box-shadow: 0px 0px 5px rgba(221, 221, 221, 0.8666666667);
@@ -1203,11 +1230,18 @@ body {
   .contenedor-carrito .contenedor-productos .footer-productos .total {
     font-size: 22.5px;
   }
-  .contenedor-carrito .contenedor-productos .footer-productos .vaciar-carrito {
-    width: 170px;
-    height: 40px;
-    background: #840fa8;
-    box-shadow: 0px 0px 5px rgba(221, 221, 221, 0.8666666667);
+  .contenedor-carrito .contenedor-productos .footer-productos .botones-carrito {
+    flex-direction: column;
+    width: 90%;
+    margin-block: 10px;
+  }
+  .contenedor-carrito .contenedor-productos .footer-productos .botones-carrito .vaciar-carrito, .contenedor-carrito .contenedor-productos .footer-productos .botones-carrito .boton-continuar {
+    padding-block: 10px;
+    width: 100%;
+    background-color: #840fa8;
+    color: rgba(221, 221, 221, 0.8666666667);
+    box-shadow: 0px 0px 10px rgba(221, 221, 221, 0.8666666667);
+    font-weight: bold;
   }
 }
 
@@ -1342,6 +1376,13 @@ body {
     margin-top: 60px;
   }
 }
+@media (max-width: 576px) {
+  .carrito-checkout {
+    margin-top: 60px;
+    padding-inline: 40px;
+    flex-direction: column;
+  }
+}
 
 .checkout-datos-container {
   width: 650px;
@@ -1372,7 +1413,7 @@ body {
   position: relative;
   transition: all 0.3s;
 }
-.checkout-datos-container .formulario-datos form .container input, .checkout-datos-container .formulario-datos .direccion .container input {
+.checkout-datos-container .formulario-datos form .container input, .checkout-datos-container .formulario-datos form .container textarea, .checkout-datos-container .formulario-datos .direccion .container input, .checkout-datos-container .formulario-datos .direccion .container textarea {
   transition: all 0.3s;
   padding: 10px 20px;
   border-radius: 1rem;
@@ -1382,7 +1423,7 @@ body {
   font-size: 18px;
   outline-color: transparent;
 }
-.checkout-datos-container .formulario-datos form .container input:focus, .checkout-datos-container .formulario-datos .direccion .container input:focus {
+.checkout-datos-container .formulario-datos form .container input:focus, .checkout-datos-container .formulario-datos form .container textarea:focus, .checkout-datos-container .formulario-datos .direccion .container input:focus, .checkout-datos-container .formulario-datos .direccion .container textarea:focus {
   border: 3px solid #840fa8;
   box-shadow: 0px 0px 10px #9f8f53;
 }
@@ -1414,7 +1455,7 @@ body {
 .checkout-datos-container .formulario-datos form .numeracion-piso-depto * input, .checkout-datos-container .formulario-datos .direccion .numeracion-piso-depto * input {
   width: 150px;
 }
-.checkout-datos-container .formulario-datos form .aclaraciones input, .checkout-datos-container .formulario-datos .direccion .aclaraciones input {
+.checkout-datos-container .formulario-datos form .aclaraciones textarea, .checkout-datos-container .formulario-datos .direccion .aclaraciones textarea {
   height: 100px;
   width: 100%;
 }
@@ -1480,6 +1521,51 @@ body {
   }
   .checkout-datos-container .formulario-datos form .aclaraciones input, .checkout-datos-container .formulario-datos .direccion .aclaraciones input {
     width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .checkout-datos-container {
+    width: 100%;
+  }
+  .checkout-datos-container .formulario-datos {
+    padding-inline: 0;
+  }
+  .checkout-datos-container .formulario-datos form div {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .checkout-datos-container .formulario-datos form div input {
+    height: 35px !important;
+    width: 100% !important;
+  }
+  .checkout-datos-container .formulario-datos form .telefono-container {
+    flex-direction: row;
+    gap: 10px !important;
+  }
+  .checkout-datos-container .formulario-datos form .telefono-container input {
+    margin-top: 12px;
+    padding-inline: 10px;
+  }
+  .checkout-datos-container .formulario-datos form .telefono-container .telefono-prefijo {
+    width: 120px;
+  }
+  .checkout-datos-container .formulario-datos form .telefono-container .telefono-sufijo {
+    width: 100%;
+  }
+  .checkout-datos-container .formulario-datos form .numeracion-piso-depto {
+    flex-flow: row wrap;
+    gap: 5px !important;
+    justify-content: start !important;
+  }
+  .checkout-datos-container .formulario-datos form .numeracion-piso-depto .numeracion-container {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .checkout-datos-container .formulario-datos form .numeracion-piso-depto .piso-container, .checkout-datos-container .formulario-datos form .numeracion-piso-depto .dpto-container {
+    width: 48%;
+  }
+  .checkout-datos-container .formulario-datos form .aclaraciones textarea {
+    height: 80px !important;
   }
 }
 
@@ -1576,10 +1662,16 @@ body {
     font-size: 14px;
   }
 }
+@media (max-width: 576px) {
+  .minimal-cart {
+    width: 100%;
+  }
+}
 
 .compra-finalizada-container {
   position: absolute;
   top: 0;
+  left: 0;
   z-index: 9999;
   background-color: #242424;
   width: 100%;
@@ -1628,11 +1720,25 @@ body {
 .compra-finalizada-container h2 {
   font-size: 50px;
   filter: drop-shadow(0px 0px 20px rgba(221, 221, 221, 0.8666666667));
+  text-align: center;
 }
-.compra-finalizada-container p {
+.compra-finalizada-container .seguimiento {
   font-size: 25px;
   margin-block: 20px;
+  color: rgba(221, 221, 221, 0.8666666667);
+  text-align: center;
+  border: 2px solid #840fa8;
+  border-radius: 1rem;
+  padding: 15px;
+}
+.compra-finalizada-container .seguimiento span {
   color: #9f8f53;
+}
+.compra-finalizada-container .agradecimiento {
+  font-size: 22px;
+  color: #9f8f53;
+  margin-bottom: 30px;
+  text-align: center;
   text-decoration: underline;
 }
 .compra-finalizada-container .volver-inicio {
@@ -1678,6 +1784,32 @@ body {
 }
 .compra-finalizada-container .volver-inicio:hover::after, .compra-finalizada-container .volver-inicio:hover::before {
   background: #840fa8;
+}
+@media (max-width: 576px) {
+  .compra-finalizada-container {
+    padding-inline: 20px;
+  }
+  .compra-finalizada-container .logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .compra-finalizada-container .logo-container .logo {
+    width: 150px;
+  }
+  .compra-finalizada-container .logo-container .texto-logo h1 {
+    font-size: 24px;
+  }
+  .compra-finalizada-container h2 {
+    font-size: 200%;
+  }
+  .compra-finalizada-container .seguimiento {
+    font-size: 120%;
+  }
+  .compra-finalizada-container .agradecimiento {
+    font-size: 120%;
+  }
 }
 
 .inicio-container {
@@ -1749,8 +1881,6 @@ body {
 }
 .inicio-container .bg-container .links-container a .link-item h4 {
   font-size: 35px;
-  -webkit-text-decoration: underline #840fa8;
-          text-decoration: underline #840fa8;
   width: 320px;
 }
 .inicio-container .bg-container .links-container a .link-item .variedad {
@@ -1822,6 +1952,8 @@ body {
   .inicio-container h2 {
     font-size: 100%;
     margin-top: 70px;
+    text-align: center;
+    margin-inline: 20px;
   }
   .inicio-container h2::before {
     width: 30px;
@@ -1855,7 +1987,7 @@ body {
   }
 }
 
-.swal2-container .swal2-popup {
+.popup-inicio .swal2-popup {
   box-shadow: 0px 0px 50px rgba(221, 221, 221, 0.8666666667);
   background: #dddddd;
   height: 500px;
