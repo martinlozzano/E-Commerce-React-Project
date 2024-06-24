@@ -1747,6 +1747,7 @@ body {
   width: 240px;
   height: 40px;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   text-decoration: none;
@@ -1809,6 +1810,12 @@ body {
   }
   .compra-finalizada-container .agradecimiento {
     font-size: 120%;
+  }
+  .compra-finalizada-container .volver-inicio {
+    height: auto;
+  }
+  .compra-finalizada-container .volver-inicio .texto {
+    font-size: 20px;
   }
 }
 

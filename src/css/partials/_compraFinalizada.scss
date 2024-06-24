@@ -84,6 +84,7 @@
         width: 240px;
         height: 40px;
         display: flex;
+        text-align: center;
         justify-content: center;
         align-items: center;
         text-decoration: none;
@@ -168,6 +169,12 @@
         }
         .agradecimiento{
             font-size: 120%;
+        }
+        .volver-inicio{
+            height: auto;
+            .texto{
+                font-size: 20px;
+            }
         }
     }
 }
